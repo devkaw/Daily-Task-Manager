@@ -41,7 +41,7 @@ O que você deseja fazer?
         qualtarefa = int(input('Digite o número da tarefa que você deseja marcar como concluída: '))
         conclusao.append(tarefas[qualtarefa])
         tarefas.pop(qualtarefa)
-        print('Você marcou essa tarefa como concluída, ela será removida da sua lista de tarefas!')
+        print('Você marcou essa tarefa como concluída, ela será removida mtda sua lista de tarefas!')
         
     if decisao == 3:
         marcartar()
@@ -61,6 +61,7 @@ O que você deseja fazer?
 '''))
         print('-'*55)
         if prioridadeoucategoria == 1:
+            print(prioridades)
             qualprioridade = input('Digite o nome da prioridade exatamente como você a registrou anteriormente: ')
             print(f'Aqui vai uma lista com todas as tarefas que possuem a prioridade {qualprioridade}:')
             for chaves, valores in prioridades.items():
@@ -68,7 +69,8 @@ O que você deseja fazer?
                     print(chaves)
                     
         if prioridadeoucategoria == 2:
-            qualcategoria = input('Digite o nome da prioridade exatamente como você a registrou anteriormente: ')
+            print(categoria)
+            qualcategoria = input('Digite o nome da categoria exatamente como você a registrou anteriormente: ')
             print(f'Aqui vai uma lista com todas as tarefas que possuem a prioridade {qualprioridade}:')
             for chaves, valores in categoria.items():
                 if valores == qualcategoria:
