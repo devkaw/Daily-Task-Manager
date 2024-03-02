@@ -20,9 +20,9 @@ O que você deseja fazer?
     print('-'*55)
     def add_tar():
         nometarefa = input('Digite o nome da tarefa que você deseja registrar: ')
-        idtarefa = int(input('Digite o número dessa tarefa: '))
-        categoriatarefa = input('Digite a categoria da tarefa. Pode ser ''Alta'', ''Média'' ou ''Baixa'': ')
-        prioridadetarefa = input('Digite a prioridade da tarefa: ')
+        idtarefa = int(input('Digite um número de registro para essa tarefa: '))
+        categoriatarefa = input('Digite a categoria da tarefa: ')
+        prioridadetarefa = input('Digite a prioridade da tarefa. Pode ser ''Alta'', ''Média'' ou ''Baixa'': ')
         tarefas[idtarefa] = nometarefa
         prioridades[nometarefa] = prioridadetarefa
         categoria[nometarefa] = categoriatarefa
@@ -38,7 +38,7 @@ O que você deseja fazer?
         
     def marcartar():
         print(tarefas)
-        qualtarefa = int(input('Digite o número da tarefa que você deseja marcar como concluída: '))
+        qualtarefa = int(input('Digite o número de registro da tarefa que você deseja marcar como concluída: '))
         conclusao.append(tarefas[qualtarefa])
         tarefas.pop(qualtarefa)
         print('Você marcou essa tarefa como concluída, ela será removida da sua lista de tarefas!')
@@ -83,7 +83,7 @@ O que você deseja fazer?
         
     def excluir_tarefas():
         print(tarefas)
-        qualtarefa = int(input('Digite o id da tarefa que você quer excluir: '))
+        qualtarefa = int(input('Digite o número de registro da tarefa que você quer excluir: '))
         tarefas.pop(qualtarefa)
         print('Sua tarefa foi excluída!')
         
