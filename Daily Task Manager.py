@@ -21,7 +21,7 @@ O que você deseja fazer?
     def add_tar():
         nometarefa = input('Digite o nome da tarefa que você deseja registrar: ')
         idtarefa = int(input('Digite o número dessa tarefa: '))
-        categoriatarefa = input('Digite a categoria da tarefa: ')
+        categoriatarefa = input('Digite a categoria da tarefa. Pode ser ''Alta'', ''Média'' ou ''Baixa'': ')
         prioridadetarefa = input('Digite a prioridade da tarefa: ')
         tarefas[idtarefa] = nometarefa
         prioridades[nometarefa] = prioridadetarefa
@@ -41,7 +41,7 @@ O que você deseja fazer?
         qualtarefa = int(input('Digite o número da tarefa que você deseja marcar como concluída: '))
         conclusao.append(tarefas[qualtarefa])
         tarefas.pop(qualtarefa)
-        print('Você marcou essa tarefa como concluída, ela será removida mtda sua lista de tarefas!')
+        print('Você marcou essa tarefa como concluída, ela será removida da sua lista de tarefas!')
         
     if decisao == 3:
         marcartar()
