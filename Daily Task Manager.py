@@ -12,7 +12,7 @@ O que você deseja fazer?
 2) Listar tarefas
 3) Marcar tarefas como concluídas
 4) Exibir tarefas concluídas
-5) Exibir tarefas por prioridade ou categoria
+5) Exibir tarefas por prioridade ou tipo
 6) Excluir tarefas
 7) Fechar o programa 
                
@@ -21,7 +21,7 @@ O que você deseja fazer?
     def add_tar():
         nometarefa = input('Digite o nome da tarefa que você deseja registrar: ')
         idtarefa = int(input('Digite um número de registro para essa tarefa: '))
-        categoriatarefa = input('Digite a categoria da tarefa: ')
+        categoriatarefa = input('Digite o tipo da tarefa: ')
         prioridadetarefa = input('Digite a prioridade da tarefa. Pode ser ''Alta'', ''Média'' ou ''Baixa'': ')
         tarefas[idtarefa] = nometarefa
         prioridades[nometarefa] = prioridadetarefa
@@ -37,6 +37,9 @@ O que você deseja fazer?
         print('-'*55)
         
     def marcartar():
+        if tarefas == {}:
+            print('Você não tem tarefas pendentes!')
+            return
         print(tarefas)
         qualtarefa = int(input('Digite o número de registro da tarefa que você deseja marcar como concluída: '))
         conclusao.append(tarefas[qualtarefa])
@@ -56,7 +59,7 @@ O que você deseja fazer?
 O que você deseja fazer?
 
 1) Exibir tarefas por prioridade
-2) Exibir tarefas por categoria       
+2) Exibir tarefas por tipo       
                                    
 '''))
         print('-'*55)
@@ -70,8 +73,8 @@ O que você deseja fazer?
                     
         if prioridadeoucategoria == 2:
             print(categoria)
-            qualcategoria = input('Digite o nome da categoria exatamente como você a registrou anteriormente: ')
-            print(f'Aqui vai uma lista com todas as tarefas que possuem a prioridade {qualprioridade}:')
+            qualcategoria = input('Digite o nome do tipo exatamente como você a registrou anteriormente: ')
+            print(f'Aqui vai uma lista com todas as tarefas que possuem o tipo {qualcategoria}:')
             for chaves, valores in categoria.items():
                 if valores == qualcategoria:
                     print(chaves)
